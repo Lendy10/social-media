@@ -1,0 +1,4 @@
+{
+  "MONGODB_URL": "mongodb+srv://admin-lendy:lendy10@cluster0.piesd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jsonSecret": "SocialMediaApp"
+}
