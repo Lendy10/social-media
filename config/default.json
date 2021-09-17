@@ -1,4 +1,6 @@
 {
-  "MONGODB_URL": "mongodb+srv://admin-lendy:lendy10@cluster0.piesd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  "jsonSecret": "SocialMediaApp"
+  "MONGO_URL": "mongodb://localhost:27017/myFirstDatabase?retryWrites=true&w=majority",
+  "jsonSecret": "bonny123Apele",
+  "githubClientID": "18e34c70a12096626346",
+  "githubClientSecret": "cbb92a5d816d81a3d0b73de5aa6bff5d2dfe91f8"
 }

@@ -1,24 +1,27 @@
-const express = require("express");
-const mongoConnect = require('./config/db');
+const express = require('express');
+const connectDB = require('./config/config')
 const app = express();
 
-mongoConnect();
+//connect DB
+connectDB();
 
-//init middleware
+//initialize middleware
 app.use(express.json({
-    extended: true
+    extended: false
 }))
 
-//define route
-app.use('/Api/Users', require('./router/Users'));
-app.use('/Api/Posts', require('./router/Posts'));
-app.use('/Api/Profile', require('./router/Profile'));
-app.use('/Api/Auth', require('./router/Auth'));
+app.get('/', (req, res) => {
+    res.send("Server is up");
+})
 
-app.get("/", (req, res) => {
-    res.send('bonni');
-});
+//define route
+app.use('/api/users', require('./router/api/users'));
+app.use('/api/auth', require('./router/api/auth'));
+app.use('/api/post', require('./router/api/post'));
+app.use('/api/profile', require('./router/api/profile'));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server is running on ${PORT}`);
+})
