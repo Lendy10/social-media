@@ -12,15 +12,15 @@ const auth = require('../../middleware/auth');
 
 // URL api/auth
 // access modifier private
-// desc: for registeration
+// desc: for login
 router.post('/', [
     check('username').notEmpty().withMessage('Username must not be empty'),
-    check('password').notEmpty().withMessage('Password must not be empty')
+    check('password').notEmpty().withMessage('Password must not be empty'),
 ], async (req, res) => {
     try {
         const {
             username,
-            password
+            password,
         } = req.body;
 
         const user = await User.findOne({
